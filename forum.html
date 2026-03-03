@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venom Forum — Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --card-bg: #050505;
+            --border: rgba(255, 255, 255, 0.03);
+            --v-red: #8b0000;
+            --text-main: #999;
+        }
+
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            margin: 0; 
+        }
+
+        header { 
+            padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.95);
+        }
+
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 26px; color: #fff; text-decoration: none; font-weight: 900; letter-spacing: 3px; }
+        
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+
+        .forum-header { border-bottom: 1px solid var(--v-red); padding-bottom: 10px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center;}
+        
+        .btn-create { background: #eee; color: #000; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 12px; }
+
+        /* Список тем */
+        .topic-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            transition: 0.3s;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topic-card:hover { border-color: var(--v-red); transform: translateX(5px); }
+
+        .topic-info h3 { margin: 0 0 5px 0; color: #eee; font-size: 16px; }
+        .topic-meta { font-size: 11px; color: #444; text-transform: uppercase; letter-spacing: 1px; }
+
+        .topic-stats { text-align: right; font-family: 'Orbitron'; font-size: 12px; color: var(--v-red); }
+        
+        .nav-back { text-decoration: none; color: #444; font-size: 12px; text-transform: uppercase; font-weight: 700; transition: 0.3s; }
+        .nav-back:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">VENOM</a>
+    <a href="index.html" class="nav-back">← На главную</a>
+</header>
+
+<div class="container">
+    <div class="forum-header">
+        <h1 style="color: #fff; font-size: 24px; margin: 0;">ФОРУМ СООБЩЕСТВА</h1>
+        <a href="#" class="btn-create">СОЗДАТЬ ТЕМУ</a>
+    </div>
+
+    <div class="topic-card">
+        <div class="topic-info">
+            <h3>Как не попасть на ненаход в Тирасполе?</h3>
+            <div class="topic-meta">Автор: ShadowAdmin • 2 часа назад</div>
+        </div>
+        <div class="topic-stats">14 ответа</div>
+    </div>
+
+    <div class="topic-card">
+        <div class="topic-info">
+            <h3>Отзывы о магазине RASTA SHOP</h3>
+            <div class="topic-meta">Автор: Client_99 • 5 часов назад</div>
+        </div>
+        <div class="topic-stats">86 ответов</div>
+    </div>
+
+    <div class="topic-card">
+        <div class="topic-info">
+            <h3>Проблемы с оплатой BTC (решение)</h3>
+            <div class="topic-meta">Автор: TechSupport • Вчера</div>
+        </div>
+        <div class="topic-stats">3 ответа</div>
+    </div>
+</div>
+
+</body>
+</html>
