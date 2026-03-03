@@ -3,91 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venom Forum — Community</title>
+    <title>Venom Forum — Сообщество</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #000000;
-            --card-bg: #050505;
-            --border: rgba(255, 255, 255, 0.03);
-            --v-red: #8b0000;
-            --text-main: #666;
-            --text-accent: #eee;
+            --bg: #030303;
+            --card-bg: rgba(15, 15, 15, 0.9);
+            --border: rgba(255, 255, 255, 0.08);
+            --v-red: #b30000;
+            --text-accent: #ffffff;
         }
 
         body { 
             font-family: 'Montserrat', sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text-main); 
-            margin: 0; 
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA0IDQiPjxnIGZpbGwtcmVsZT0iZXZlbm9kZCI+PGcgZmlsbD0iIzFhMWExYSIgZmlsbC1vcGFjaXR5PSIwLjA3Ij48cGF0aCBkPSJNMCAwaDJ2Mkgwek0yIDJoMnYySDJ6Ii8+PC9nPjwvZz48L3N2Zz4=');
+            background: #000; color: #777; margin: 0; 
         }
 
         header { 
-            padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; 
-            border-bottom: 1px solid var(--border);
-            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid var(--border); background: #000;
         }
 
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 26px; color: #fff; text-decoration: none; font-weight: 900; letter-spacing: 3px; }
-        .nav-back { text-decoration: none; color: #444; font-size: 11px; text-transform: uppercase; font-weight: 700; font-family: 'Orbitron'; }
-        .nav-back:hover { color: #fff; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; color: #fff; text-decoration: none; font-weight: 900; letter-spacing: 4px; }
+        .nav-back { text-decoration: none; color: #555; font-size: 11px; text-transform: uppercase; font-weight: 700; }
 
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
 
-        .forum-header { border-bottom: 1px solid var(--v-red); padding-bottom: 20px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;}
-        .btn-create { background: #eee; color: #000; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase;}
+        .forum-title { color: #fff; font-family: 'Orbitron'; font-size: 32px; margin-bottom: 40px; border-left: 4px solid var(--v-red); padding-left: 20px; }
+
+        .topic-list { display: flex; flex-direction: column; gap: 15px; }
 
         .topic-card {
             background: var(--card-bg); border: 1px solid var(--border);
-            padding: 25px; margin-bottom: 15px; border-radius: 4px;
+            padding: 25px; border-radius: 8px;
             display: flex; justify-content: space-between; align-items: center;
             transition: 0.3s; cursor: pointer;
         }
-        .topic-card:hover { border-color: var(--v-red); transform: translateX(5px); }
+        .topic-card:hover { border-color: #444; background: #0a0a0a; }
 
-        .topic-info h3 { margin: 0 0 8px 0; color: var(--text-accent); font-size: 18px; letter-spacing: 0.5px; }
-        .topic-meta { font-size: 10px; color: #444; text-transform: uppercase; letter-spacing: 1px; }
+        .topic-info h3 { margin: 0 0 10px 0; color: var(--text-accent); font-size: 18px; }
+        .topic-meta { font-size: 11px; color: #444; text-transform: uppercase; }
 
-        .topic-stats { text-align: right; font-family: 'Orbitron'; font-size: 12px; color: var(--v-red); font-weight: 900; }
-        .topic-stats span { display: block; font-size: 8px; color: #333; }
+        .stats { font-family: 'Orbitron'; color: var(--v-red); font-size: 14px; text-align: right; }
+        .stats span { display: block; font-size: 9px; color: #333; margin-top: 5px; }
+
+        .btn-new { background: #fff; color: #000; padding: 12px 25px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 12px; transition: 0.3s;}
+        .btn-new:hover { background: var(--v-red); color: #fff; }
     </style>
 </head>
 <body>
 
 <header>
     <a href="index.html" class="logo">VENOM</a>
-    <a href="index.html" class="nav-back">← Вернуться в магазины</a>
+    <a href="index.html" class="nav-back">← Назад</a>
 </header>
 
 <div class="container">
-    <div class="forum-header">
-        <h1 style="color: #fff; font-size: 28px; margin: 0; font-family: 'Orbitron';">FORUM</h1>
-        <a href="#" class="btn-create">Новая тема</a>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+        <div class="forum-title">COMMUNITY</div>
+        <a href="#" class="btn-new">СОЗДАТЬ ТЕМУ</a>
     </div>
 
-    <div class="topic-card">
-        <div class="topic-info">
-            <h3>Правила безопасных сделок в системе</h3>
-            <div class="topic-meta">Закреплено • Администрация</div>
+    <div class="topic-list">
+        <div class="topic-card">
+            <div class="topic-info">
+                <h3>Общие правила безопасности сделок</h3>
+                <div class="topic-meta">Admin • Важное</div>
+            </div>
+            <div class="stats">GUIDE</div>
         </div>
-        <div class="topic-stats">INFO</div>
-    </div>
 
-    <div class="topic-card">
-        <div class="topic-info">
-            <h3>Обсуждение локаций: Тирасполь/Бендеры</h3>
-            <div class="topic-meta">Автор: Shadow • 45 мин. назад</div>
+        <div class="topic-card">
+            <div class="topic-info">
+                <h3>Отзывы: Работа курьеров в Тирасполе</h3>
+                <div class="topic-meta">User_01 • 15 мин назад</div>
+            </div>
+            <div class="stats">128 <span>сообщений</span></div>
         </div>
-        <div class="topic-stats">142 <span>ответов</span></div>
-    </div>
-
-    <div class="topic-card">
-        <div class="topic-info">
-            <h3>RASTA SHOP — проверка качества 🌿</h3>
-            <div class="topic-meta">Автор: User_291 • 3 часа назад</div>
-        </div>
-        <div class="topic-stats">86 <span>ответов</span></div>
     </div>
 </div>
 
